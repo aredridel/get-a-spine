@@ -81,10 +81,10 @@
                 <section>
                     <h2>What went wrong</h2>
                     <p>In a word: focus.</p>
-                    <ul class='fragment'>
-                        <li>People were afraid of breaking other things, so they would only edit code touching the spot that had a problem.</li>
-                        <li>Design in the small: "make that blue darker"</li>
-                        <li>Special cases</li>
+                    <ul>
+                        <li class='fragment'>A new feature request? Add more styles.</li>
+                        <li class='fragment'>Design in the small: "make that blue darker"</li>
+                        <li class='fragment'>Special cases: just do them inline.</li>
                     </ul>
                 </section>
 
@@ -121,7 +121,7 @@
         'click .im': 'openChat'
     },
     openMail: function (ev) {
-        if ($(ev.target).is('.disabled') return false;
+        if ($(ev.target).is('.disabled')) return false;
         popModal(this.attr('data-profile'));
     },
     ...
@@ -188,7 +188,7 @@
 
                 <section>
                     <section>
-                        <h2>Require.js</h2>
+                        <h2>The profile component</h2>
                         <p>profile.js</p>
                         <pre><code>define(['backbone'], function(Backbone) {
     return Backbone.View.extend({
@@ -197,7 +197,7 @@
             'click .im': 'openChat'
         },
         openMail: function (ev) {
-            if ($(ev.target').is('.disabled') return false;
+            if ($(ev.target').is('.disabled')) return false;
             popModal(this.attr('data-profile'));
         }
     });
@@ -205,7 +205,6 @@
                     </section>
 
                     <section>
-                        <h2>LESS</h2>
                         <p>profile.less</p>
                         <code><pre>.Profile {
     .img {
@@ -222,7 +221,7 @@
                     </section>
 
                     <section>
-                        <h2>Here we go...</h2>
+                        <h2>The window component</h2>
                         <p>window.js</p>
                         <pre><code>define(['backbone', 'components/profile'], function(Backbone, Profile) {
     return Backbone.View.extend({
@@ -239,6 +238,7 @@
                     </section>
 
                     <section>
+                        <h2>The page markup</h2>
                         <pre><code>&lt;link href='/components/window.css' rel='stylesheet'&gt;
 &lt;div class='Profile'&gt;
     &lt;div class='img'&gt;&lt;/img&gt;
@@ -257,6 +257,10 @@ require(['jquery', 'components/window'], function($, Window) {
 });
 &lt;/script&gt;</code></pre>
                     </section>
+                </section>
+
+                <section>
+                    <h1>How do you do it?</h1>
                 </section>
 
 			</div>
