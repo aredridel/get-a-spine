@@ -191,7 +191,7 @@
 &lt;script src='/components/map.js'&gt;&lt;/script&gt;
 &lt;script src='/components/autocomplete.js'&gt;&lt;/script&gt;
 &lt;script&gt;
-    var window = new Window({el: $('body')});
+    var ourAppWindow = new Window({el: $('body')});
 &lt;/script&gt;
                         </code></pre>
                         <p>That's a lot of things to maintain on a page</p>
@@ -265,7 +265,7 @@
 &lt;/div&gt;
 &lt;script&gt;
 require(['jquery', 'components/window'], function($, Window) {
-    window.main = new Window($('body'));
+    var ourAppWindow = new Window($('body'));
 });
 &lt;/script&gt;</code></pre>
                     </section>
