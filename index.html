@@ -279,6 +279,9 @@ require(['jquery', 'components/window'], function($, Window) {
                     <h1>Tips</h1>
                     <ul>
                         <li>Keep your views acyclic: References in one direction only. Propagate information back via a model.</li>
+                        <li>Break it up. It's okay to have tiny views that do one thing well.</li>
+                        <li>Communicate through models. Avoid making up new events.</li>
+                        <li>Keep a separate model for the view's internal state, and update the main model from it on other actions</li>
                     </ul>
                 </section>
 
