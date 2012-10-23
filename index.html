@@ -98,9 +98,8 @@
                     <h2>Untangling the mess</h2>
                     <p>We found some strategies for fixing it up, and some libraries that help a lot.</p>
                     <ul>
-                        <li class='fragment'>Start small. Fix one page or section at a time.</li>
                         <li class='fragment'>Make a wall. Clean inside it. Slowly extend the area.</li>
-                        <li class='fragment'>Break things into pieces. Make components</li>
+                        <li class='fragment'>Start small. Fix one page or section at a time.</li>
                         <li class='fragment'>Use a style metalanguage.</li>
                         <li class='fragment'>Attach event handlers to component roots.</li>
                     </ul>
@@ -108,17 +107,21 @@
 				</section>
 
 				<section>
-                    <h2>Components</h2>
+                    <p>Break things into pieces.</p>
+                    <h2>Make Components</h2>
                     <ul>
-                        <li>Components are identifiable <em>things</em>:
+                        <li>Make <em>identifiable things</em>:
                             <ul>
-                                <li>Profile block</li>
-                                <li>menu bar</li>
+                                <li><q>a user's profile block</q></li>
+                                <li><q>the menu bar</q></li>
                                 <li>window content frame</li>
                             </ul>
                         </li>
+                        <div class='fragment'>
                         <li>There's style, too, not just javascript or markup.</li>
                         <li>They're small. We have a dozen different components on a page. Some are a single button. Some are complicated (like a map or a whole menu bar)</li>
+                        <li>Everyone thinks components are a good thing, and there's <a href='http://tjholowaychuk.com/post/27984551477/components'>a lot of thinking going on</a> about how to do them right</li>
+                        </div>
                     </ul>
                     
 				</section>
@@ -191,7 +194,7 @@
 &lt;script src='/components/map.js'&gt;&lt;/script&gt;
 &lt;script src='/components/autocomplete.js'&gt;&lt;/script&gt;
 &lt;script&gt;
-    var ourAppWindow = new Window({el: $('body')});
+    var ourAppWindow = new AppWindow({el: $('body')});
 &lt;/script&gt;
                         </code></pre>
                         <p>That's a lot of things to maintain on a page</p>
@@ -253,7 +256,8 @@
                         <h2>The page markup</h2>
                         <pre><code>&lt;link href='/components/window.css' rel='stylesheet'&gt;
 &lt;div class='Profile'&gt;
-    &lt;div class='img'&gt;&lt;/img&gt;
+    &lt;div class='img' style='background-image: url(/i/12345.jpg)'&gt;
+    &lt;/div&gt;
     &lt;div class='info'&gt;
         &lt;div data-field='age'&gt;18&lt;/div&gt;&lt;br&gt;
         &lt;div data-field='location'&gt;Boston, MA&lt;/div&gt;
@@ -262,12 +266,13 @@
         &lt;a href='/mail?to=1235' class='mail'&gt;Mail&lt;/a&gt;
         &lt;a href='/chat/1235' class='im'&gt;IM&lt;/a&gt;
     &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt; &lt;!-- Times a hundred! --&gt;
 &lt;script&gt;
 require(['jquery', 'components/window'], function($, Window) {
-    var ourAppWindow = new Window($('body'));
+    var ourAppWindow = new AppWindow($('body'));
 });
 &lt;/script&gt;</code></pre>
+                        <p>A lot of the time, it's perfectly okay to render the document server-side</p>
                     </section>
                 </section>
 
@@ -289,6 +294,12 @@ require(['jquery', 'components/window'], function($, Window) {
                     <h1>More examples</h1>
                     <p>Radius control: the template is just an HTML5 range input. The view is trivial, and controls just a radius property in a model.</p>
                     <p>Map control: The view instantiates a Google Map. The inputs are lat and lon from a model &mdash; and a radius. The two views communicate only through that.</p>
+                </section>
+
+                <section>
+                    <h2>Colophon</h2>
+                    <p>I'm <a href='//twitter.com/aredridel'>@aredridel</a> (Aria Stewart), and I'm a Backboneaholic.</p>
+                    <p><a href='//aredridel.github.com/get-a-spine'>//aredridel.github.com/get-a-spine</a></p>
                 </section>
 			</div>
 
